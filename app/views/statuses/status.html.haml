@@ -1,0 +1,49 @@
+.litmus-status
+  .container
+    .row.monitor-row
+      .col-md-6
+        %h2
+          = "Current Status: "
+          %span{:class => (human_boolean(@current.current_status))}
+            = human_boolean(@current.current_status)
+      .col-md-6.last-updated
+        #timestamp.ts
+          = "Last Updated: "
+          = @current.updated_at.strftime("%m/%d/%Y - %H:%M:%S UTC")
+    .row
+      .col
+        .alert{:class => (alert(@current.current_status))}
+          #message
+            = "Status Message: "
+            = @current.status_message
+
+    .row.historical-status-headings
+      .col-md-4
+        %h4{:class => "col-heading"}
+          = "Status"
+      .col-md-4
+        %h4{:class => "col-heading"}
+          = "Message"
+      .col-md-4
+        %h4{:class => "col-heading"}
+          = "Timestamp"
+
+    .row.statuses
+      .col
+        - @history.each do |status|
+          .row.status_row.row-eq-height
+            .col-md-4.status-cell
+              %span.mobile-label
+                = "Status: "
+              = human_boolean(status.current_status)
+            .col-md-4.message-cell
+              %span.mobile-label
+                = "Message: "
+              = status.status_message
+            .col-md-4.timestamp-cell
+              %span.mobile-label
+                = "Timestamp: "
+              = @current.updated_at.strftime("%m/%d/%Y - %H:%M:%S UTC")
+
+
+

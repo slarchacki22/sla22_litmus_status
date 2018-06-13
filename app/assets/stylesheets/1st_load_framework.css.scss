@@ -1,0 +1,109 @@
+/* import the CSS framework */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*override for the 'Home' navigation link*/
+.navbar-brand {
+  font-size: inherit;
+}
+main {
+  @extend .container;
+  background-color: #eee;
+  padding-bottom: 80px;
+  width: 100%;
+  margin-top: 75px; 
+}
+section {
+  @extend .row;
+  margin-top: 20px;
+}
+html, body {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.litmus_status .status {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: solid 1px #e2e2e2;
+}
+.row.monitor-row span.UP{
+  color: #56bb75;
+}
+.row.monitor-row span.DOWN{
+  color: #d55640;
+}
+.last-updated{
+  text-align: left;
+}
+.mobile-label{
+    display: inline-block;
+}
+.row.historical-status-headings{
+  background-color: #444;
+  display: none;
+}
+@media only screen and (min-width : 992px) {
+  .mobile-label{
+    display: none;
+  }
+  .row.historical-status-headings{
+    display: block;
+  }
+}
+@media only screen and (min-width : 1024px) {
+  .last-updated{
+    text-align: right;
+  }
+}
+.ts{
+  display: block;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.row.historical-status-headings h4.col-heading{
+  color: #fff;
+}
+.statuses {
+  padding: 0 20px;
+  border: solid 1px #e2e2e2;
+  background-color: #ffffff;
+}
+.row.status_row {
+    padding: 10px;
+    border-bottom: solid 1px #e2e2e2;
+}
+footer{
+  background-color: #383838;
+  color: #ffffff;
+  padding-top: 20px;
+}
+
+
+.navbar {
+  color: #4e6170;
+  background-color: #ffffff;
+}
+.navbar-nav {
+  float:right;
+}
+.navbar-inverse {
+    border-color: rgba(78, 97, 112, 0.3);
+}
+.navbar-logo {
+  padding: 0;
+  img {
+    vertical-align: middle;
+    max-width: 120px;
+    height: auto;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+  }
+}
+
+
+
+
